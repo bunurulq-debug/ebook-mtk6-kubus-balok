@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2563eb">
+<title>Petualangan Kubus dan Balok | Matematika Kelas VI</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--sky:#e0f2fe;--teal:#0f766e;--yellow:#fbbf24;--pink:#fce7f3;--ink:#1f2937;--muted:#64748b;--paper:#fff;--bg:#f4f8ff;--green:#dcfce7;--red:#fee2e2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;line-height:1.6}
+header{background:linear-gradient(125deg,#1d4ed8,#0f766e);color:white;padding:28px 18px 34px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:260px;height:260px;border:35px solid #ffffff20;border-radius:50%;right:-70px;top:-100px}
+.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center;position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:.78rem;color:#dbeafe}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;margin:.4rem 0 1rem}
+header p{max-width:650px;color:#e0f2fe;font-size:1.05rem}
+.hero-art{width:100%;max-width:320px;justify-self:center;filter:drop-shadow(0 15px 12px #0f172a25)}
+.wrap{max-width:1100px;margin:auto;padding:20px}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:22px;align-items:start}
+aside{position:sticky;top:12px;background:white;border:1px solid #dbeafe;border-radius:20px;padding:16px;box-shadow:0 8px 28px #1e3a8a0b}
+aside h3{margin:0 0 8px;color:var(--navy)}
+nav a{display:block;text-decoration:none;color:#334155;padding:9px 11px;border-radius:10px;margin:3px 0;font-weight:650;font-size:.94rem}
+nav a:hover,nav a.active{background:#dbeafe;color:#1d4ed8}
+.progress{height:8px;background:#e2e8f0;border-radius:20px;overflow:hidden;margin:8px 0}
+#progressBar{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#14b8a6);transition:width .3s}
+main{min-width:0}.card{background:white;border:1px solid #e2e8f0;border-radius:20px;padding:clamp(18px,3vw,28px);margin-bottom:20px;box-shadow:0 8px 28px #1e3a8a08}
+h2{color:var(--navy);font-size:1.65rem;line-height:1.25;margin:0 0 12px}h3{color:var(--navy);margin:1.1rem 0 .4rem}
+.tag{display:inline-block;border-radius:999px;background:#dbeafe;color:#1d4ed8;padding:4px 10px;font-size:.8rem;font-weight:800}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.mini{background:#f8fafc;border:1px solid #e2e8f0;border-radius:15px;padding:15px}
+.callout{border-left:5px solid var(--yellow);background:#fffbeb;padding:14px 16px;border-radius:10px;margin:15px 0}
+.note{color:var(--muted);font-size:.92rem}
+.btn{border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:800;cursor:pointer;background:var(--blue);color:white;transition:transform .12s,opacity .12s}
+.btn:hover{transform:translateY(-1px);opacity:.93}.btn.secondary{background:#e2e8f0;color:#1e293b}.btn.green{background:var(--teal)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.quiz-question{padding:16px 0;border-bottom:1px solid #e2e8f0}.quiz-question:last-child{border:0}
+.option{display:flex;align-items:flex-start;gap:9px;padding:10px 12px;margin:7px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:11px;cursor:pointer}
+.option:has(input:checked){border-color:#60a5fa;background:#eff6ff}.option input{margin-top:6px}
+.feedback{font-weight:700;margin-top:8px}.correct{color:#15803d}.incorrect{color:#b91c1c}
+.result{display:none;border-radius:16px;padding:18px;margin-top:16px;background:#ecfdf5;border:1px solid #a7f3d0}
+svg{max-width:100%;height:auto}.diagram{display:flex;justify-content:center;align-items:center;background:#f8fafc;border-radius:16px;padding:12px;margin:12px 0}
+table{border-collapse:collapse;width:100%;margin:10px 0}th,td{border:1px solid #cbd5e1;padding:10px;text-align:center}th{background:#dbeafe;color:#1e3a8a}
+input[type=text],input[type=number],input[type=url]{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;margin:5px 0 12px}
+footer{text-align:center;color:var(--muted);padding:25px 15px;font-size:.9rem}
+.small-cube{display:inline-block;background:#bfdbfe;border:2px solid #2563eb;width:26px;height:26px;border-radius:5px;margin:2px;vertical-align:middle}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero-art{max-width:210px;grid-row:1}.layout{grid-template-columns:1fr}aside{position:static}.grid2{grid-template-columns:1fr}nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{aside,.actions,.btn,header:after{display:none!important}.layout{display:block}.card{box-shadow:none;break-inside:avoid}body{background:white}header{background:white;color:#111;padding:10px}header p,.eyebrow{color:#333}}
+</style>
+</head>
+<body>
+<header>
+ <div class="hero">
+  <div>
+   <div class="eyebrow">E-Book Interaktif • Matematika SD/MI Kelas VI</div>
+   <h1>Petualangan<br>Kubus dan Balok</h1>
+   <p>Belajar menyusun bangun ruang, melihat benda dari berbagai arah, dan menguji pemahaman melalui permainan serta evaluasi.</p>
+   <span class="tag" style="background:#ffffff;color:#1d4ed8">Bab 3</span>
+  </div>
+  <svg class="hero-art" viewBox="0 0 300 230" role="img" aria-label="Ilustrasi kubus dan balok berwarna">
+   <g stroke="#1e3a8a" stroke-width="2" stroke-linejoin="round">
+    <polygon points="35,95 92,65 149,95 92,127" fill="#bfdbfe"/><polygon points="35,95 92,127 92,190 35,158" fill="#60a5fa"/><polygon points="92,127 149,95 149,158 92,190" fill="#2563eb"/>
+    <polygon points="148,52 192,29 236,52 192,77" fill="#fde68a"/><polygon points="148,52 192,77 192,126 148,101" fill="#fbbf24"/><polygon points="192,77 236,52 236,101 192,126" fill="#f59e0b"/>
+    <polygon points="143,144 184,123 225,144 184,167" fill="#99f6e4"/><polygon points="143,144 184,167 184,204 143,181" fill="#2dd4bf"/><polygon points="184,167 225,144 225,181 184,204" fill="#0f766e"/>
+   </g>
+   <circle cx="254" cy="35" r="13" fill="#f9a8d4"/><path d="M249 35l4 4 7-9" fill="none" stroke="#9d174d" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+ </div>
+</header>
+<div class="wrap layout">
+<aside>
+ <h3>Daftar Isi</h3>
+ <nav id="menu">
+  <a href="#beranda">🏠 Mulai Belajar</a>
+  <a href="#tujuan">🎯 Tujuan Belajar</a>
+  <a href="#materi1">🧱 Menyusun & Mengurai</a>
+  <a href="#game1">🎮 Game Susun Kubus</a>
+  <a href="#materi2">👀 Tampak Berbagai Arah</a>
+  <a href="#latihan">✏️ Latihan Tiap Materi</a>
+  <a href="#evaluasi">🏆 Evaluasi Akhir</a>
+  <a href="#hasil">📊 Hasil Belajar</a>
+ </nav>
+ <hr style="border:0;border-top:1px solid #e2e8f0;margin:14px 0">
+ <strong>Progres belajar</strong>
+ <div class="progress"><div id="progressBar"></div></div>
+ <div class="note"><span id="progressText">0 dari 8 bagian</span> telah dibuka</div>
+ <div class="actions"><button class="btn secondary" onclick="window.print()">Cetak / Simpan PDF</button></div>
+</aside>
+<main>
+<section class="card" id="beranda" data-section>
+ <span class="tag">Selamat datang!</span>
+ <h2>Halo, Penjelajah Bangun Ruang! 👋</h2>
+ <p>Pernahkah kamu melihat tumpukan kardus, gedung, atau mainan berbentuk kubus? Benda-benda itu dapat membantu kita memahami bangun ruang.</p>
+ <div class="grid2">
+  <div class="mini"><div style="font-size:2rem">🧩</div><strong>Amati</strong><p class="note">Perhatikan bentuk dan susunan kubus atau balok.</p></div>
+  <div class="mini"><div style="font-size:2rem">✍️</div><strong>Coba</strong><p class="note">Jawab latihan dan gunakan petunjuk untuk belajar.</p></div>
+ </div>
+ <div class="callout"><strong>Ingat:</strong> gambar suatu bangun ruang bisa tampak berbeda jika dilihat dari arah yang berbeda.</div>
+ <p class="note">E-book ini disusun berdasarkan materi Bab 3 “Kubus dan Balok” pada bagian PDF yang diberikan (halaman buku 75–90). Pada cuplikan sumber ini, bagian yang dibahas adalah mengonstruksi/mengurai serta visualisasi spasial.</p>
+</section>
+<section class="card" id="tujuan" data-section>
+ <h2>🎯 Tujuan Pembelajaran</h2>
+ <p>Setelah belajar, kamu diharapkan mampu:</p>
+ <ul>
+  <li>Menentukan hasil menyusun dan mengurai kubus, balok, serta gabungannya.</li>
+  <li>Menggambar atau mengenali tampak bangun dari arah depan, kanan/samping, dan atas.</li>
+  <li>Menggunakan tampilan dari beberapa arah untuk memperkirakan susunan bangun ruang.</li>
+ </ul>
+ <h3>Pertanyaan pemantik</h3>
+ <ol><li>Bisakah beberapa bangun ruang digabungkan menjadi bangun baru?</li><li>Apakah sebuah bangun terlihat sama dari semua arah?</li><li>Informasi apa yang membantu kita mengenali susunan kubus?</li></ol>
+ <div class="callout">Kegiatan belajar: baca materi, mainkan game, kerjakan latihan, lalu selesaikan evaluasi akhir.</div>
+</section>
+<section class="card" id="materi1" data-section>
+ <span class="tag">Materi 1</span><h2>🧱 Mengonstruksi dan Mengurai Bangun Ruang</h2>
+ <p><strong>Mengonstruksi</strong> berarti menyusun beberapa bangun ruang menjadi bentuk gabungan. <strong>Mengurai</strong> berarti memisahkan bangun gabungan menjadi bangun-bangun yang lebih kecil.</p>
+ <div class="diagram">
+ <svg viewBox="0 0 460 180" width="460" role="img" aria-label="Kubus-kubus tersusun menjadi bentuk bertingkat">
+  <g stroke="#1e40af" stroke-width="1.5" stroke-linejoin="round">
+   <g transform="translate(25,50)"><polygon points="0,25 35,7 70,25 35,44" fill="#dbeafe"/><polygon points="0,25 35,44 35,83 0,64" fill="#60a5fa"/><polygon points="35,44 70,25 70,64 35,83" fill="#2563eb"/></g>
+   <g transform="translate(95,50)"><polygon points="0,25 35,7 70,25 35,44" fill="#dbeafe"/><polygon points="0,25 35,44 35,83 0,64" fill="#60a5fa"/><polygon points="35,44 70,25 70,64 35,83" fill="#2563eb"/></g>
+   <g transform="translate(165,50)"><polygon points="0,25 35,7 70,25 35,44" fill="#dbeafe"/><polygon points="0,25 35,44 35,83 0,64" fill="#60a5fa"/><polygon points="35,44 70,25 70,64 35,83" fill="#2563eb"/></g>
+   <g transform="translate(235,11)"><polygon points="0,25 35,7 70,25 35,44" fill="#fef3c7"/><polygon points="0,25 35,44 35,83 0,64" fill="#fbbf24"/><polygon points="35,44 70,25 70,64 35,83" fill="#d97706"/></g>
+   <g transform="translate(305,11)"><polygon points="0,25 35,7 70,25 35,44" fill="#fef3c7"/><polygon points="0,25 35,44 35,83 0,64" fill="#fbbf24"/><polygon points="35,44 70,25 70,64 35,83" fill="#d97706"/></g>
+  </g>
+  <text x="120" y="160" font-size="14" fill="#1e3a8a" text-anchor="middle">Susunan mendatar</text><text x="330" y="120" font-size="14" fill="#92400e" text-anchor="middle">Susunan bertingkat</text>
+ </svg></div>
+ <h3>Hal penting yang perlu diingat</h3>
+ <ul>
+  <li>Beberapa kubus yang sama ukuran dapat disusun berdampingan atau ditumpuk.</li>
+  <li>Susunan yang sama bisa tampak berbeda jika dilihat dari arah berbeda.</li>
+  <li>Bangun gabungan dapat diuraikan kembali menjadi bangun penyusunnya.</li>
+  <li>Balok juga dapat disusun untuk membentuk susunan yang berbeda.</li>
+ </ul>
+ <div class="grid2">
+  <div class="mini"><strong>Contoh dalam kehidupan</strong><p>Kontainer bekas dapat disusun menjadi bangunan, seperti contoh perpustakaan dan hotel pada buku sumber.</p></div>
+  <div class="mini"><strong>Kesadaran lingkungan 🌱</strong><p>Menggunakan kembali kontainer bekas merupakan salah satu cara memanfaatkan barang yang sudah ada.</p></div>
+ </div>
+ <h3>Coba pikirkan</h3><p>Jika kamu memiliki 3 kubus yang sama, apakah kamu dapat membuat lebih dari satu susunan? Cobalah menyusun kubus mainanmu dan gambarkan hasilnya.</p>
+</section>
+<section class="card" id="game1" data-section>
+ <span class="tag">Game 1</span><h2>🎮 Tantangan Susun Kubus</h2>
+ <p>Gunakan tombol untuk menambah atau mengurangi jumlah kubus pada model. Bayangkan setiap kotak sebagai satu kubus yang sama ukuran.</p>
+ <div class="mini" style="text-align:center">
+  <div id="cubeCount" style="font-size:1.1rem;font-weight:800">Jumlah kubus: 3</div>
+  <div id="cubeDisplay" style="min-height:85px;padding:12px"></div>
+  <div class="actions" style="justify-content:center"><button class="btn" onclick="changeCubes(-1)">− Kurangi</button><button class="btn green" onclick="changeCubes(1)">+ Tambah</button><button class="btn secondary" onclick="resetCubes()">Mulai ulang</button></div>
+  <p id="cubeHint" class="note">Coba buat susunan dengan 3 kubus. Dapatkah kamu menggambarnya dari arah lain?</p>
+ </div>
+ <h3>Pertanyaan cepat</h3>
+ <p>Jika satu susunan berisi 4 kubus, lalu satu kubus dipisahkan, berapa kubus yang tersisa?</p>
+ <div class="actions"><button class="btn secondary" onclick="quickAnswer(2)">2 kubus</button><button class="btn secondary" onclick="quickAnswer(3)">3 kubus</button><button class="btn secondary" onclick="quickAnswer(5)">5 kubus</button></div>
+ <div id="quickFeedback" class="feedback" aria-live="polite"></div>
+</section>
+<section class="card" id="materi2" data-section>
+ <span class="tag">Materi 2</span><h2>👀 Melihat Bangun dari Berbagai Arah</h2>
+ <p>Sebuah susunan kubus dapat dilihat dari beberapa arah. Buku sumber menggunakan tiga tampilan utama:</p>
+ <div class="grid2">
+  <div class="mini"><div style="font-size:2rem">⬅️</div><strong>Tampak depan</strong><p class="note">Bentuk yang terlihat ketika kita berdiri di depan susunan.</p></div>
+  <div class="mini"><div style="font-size:2rem">➡️</div><strong>Tampak kanan</strong><p class="note">Bentuk yang terlihat ketika kita melihat dari sisi kanan.</p></div>
+  <div class="mini"><div style="font-size:2rem">⬆️</div><strong>Tampak atas</strong><p class="note">Bentuk yang terlihat jika kita melihat dari atas.</p></div>
+  <div class="mini"><div style="font-size:2rem">🧠</div><strong>Rekonstruksi</strong><p class="note">Menggunakan gambar dari beberapa arah untuk menyusun kembali bangun.</p></div>
+ </div>
+ <div class="diagram">
+ <svg viewBox="0 0 460 210" width="460" role="img" aria-label="Tiga contoh tampak bangun kubus">
+  <g stroke="#1d4ed8" stroke-width="2">
+   <rect x="28" y="62" width="42" height="42" fill="#93c5fd"/><rect x="70" y="62" width="42" height="42" fill="#93c5fd"/><rect x="70" y="20" width="42" height="42" fill="#93c5fd"/>
+   <rect x="177" y="62" width="42" height="42" fill="#99f6e4"/><rect x="177" y="20" width="42" height="42" fill="#99f6e4"/>
+   <rect x="318" y="62" width="42" height="42" fill="#fde68a"/><rect x="360" y="62" width="42" height="42" fill="#fde68a"/><rect x="402" y="62" width="42" height="42" fill="#fde68a"/>
+  </g>
+  <g fill="#1e293b" font-size="14" font-weight="700" text-anchor="middle"><text x="70" y="135">Depan</text><text x="198" y="135">Kanan</text><text x="381" y="135">Atas</text></g>
+  <text x="230" y="180" fill="#64748b" font-size="12" text-anchor="middle">Ilustrasi sederhana: tampilan bisa berbeda sesuai susunan.</text>
+ </svg></div>
+ <h3>Strategi menentukan susunan</h3>
+ <ol><li>Amati jumlah kotak pada tampak depan.</li><li>Periksa tinggi susunan dari tampak samping/kanan.</li><li>Periksa banyak posisi kubus dari tampak atas.</li><li>Gabungkan semua informasi dan coba susun modelnya.</li></ol>
+ <div class="callout"><strong>Nilai karakter:</strong> melihat dari sisi yang berbeda mengingatkan kita bahwa satu hal dapat dipahami dari beberapa perspektif. Dengarkan penjelasan teman sebelum menyimpulkan.</div>
+</section>
+<section class="card" id="latihan" data-section>
+ <span class="tag">Latihan</span><h2>✏️ Latihan Tiap Materi</h2>
+ <p>Pilih satu jawaban pada setiap soal, lalu tekan <strong>Periksa Jawaban</strong>.</p>
+ <form id="practiceForm">
+  <div class="quiz-question"><strong>1. Apa arti mengonstruksi bangun ruang?</strong>
+   <label class="option"><input type="radio" name="p1" value="a"> Memisahkan bangun menjadi bagian kecil</label><label class="option"><input type="radio" name="p1" value="b"> Menyusun beberapa bangun menjadi bentuk gabungan</label><label class="option"><input type="radio" name="p1" value="c"> Mengukur panjang garis saja</label><div class="feedback" id="pf1"></div>
+  </div>
+  <div class="quiz-question"><strong>2. Jika bangun dilihat dari atas, tampilan itu disebut …</strong>
+   <label class="option"><input type="radio" name="p2" value="a"> Tampak depan</label><label class="option"><input type="radio" name="p2" value="b"> Tampak kanan</label><label class="option"><input type="radio" name="p2" value="c"> Tampak atas</label><div class="feedback" id="pf2"></div>
+  </div>
+  <div class="quiz-question"><strong>3. Mengapa gambar bangunan dari dua orang dapat berbeda?</strong>
+   <label class="option"><input type="radio" name="p3" value="a"> Mereka mungkin melihat dari arah berbeda</label><label class="option"><input type="radio" name="p3" value="b"> Bangunan selalu berubah bentuk</label><label class="option"><input type="radio" name="p3" value="c"> Bangun ruang hanya punya satu sisi</label><div class="feedback" id="pf3"></div>
+  </div>
+  <div class="quiz-question"><strong>4. Untuk membantu menyusun kembali bangun kubus, informasi yang berguna adalah …</strong>
+   <label class="option"><input type="radio" name="p4" value="a"> Warna kertas saja</label><label class="option"><input type="radio" name="p4" value="b"> Tampak dari beberapa arah</label><label class="option"><input type="radio" name="p4" value="c"> Nama pembuat gambar saja</label><div class="feedback" id="pf4"></div>
+  </div>
+  <div class="actions"><button type="button" class="btn" onclick="checkPractice()">Periksa Jawaban</button><button type="reset" class="btn secondary" onclick="clearPractice()">Ulangi</button></div>
+  <div id="practiceResult" class="result" aria-live="polite"></div>
+ </form>
+</section>
+<section class="card" id="evaluasi" data-section>
+ <span class="tag">Evaluasi Akhir</span><h2>🏆 Uji Pemahamanmu</h2>
+ <p>Kerjakan mandiri. Setiap jawaban benar bernilai 20 poin. Nilai akan dihitung otomatis.</p>
+ <form id="examForm">
+  <div class="quiz-question"><strong>1. Bangun ruang dapat …</strong>
+   <label class="option"><input type="radio" name="e1" value="a"> Digabungkan dan diuraikan</label><label class="option"><input type="radio" name="e1" value="b"> Dilihat dari satu arah saja</label><label class="option"><input type="radio" name="e1" value="c"> Selalu memiliki bentuk sama</label><div class="feedback" id="ef1"></div>
+  </div>
+  <div class="quiz-question"><strong>2. Susunan dua gambar bisa jadi susunan yang sama jika …</strong>
+   <label class="option"><input type="radio" name="e2" value="a"> Warnanya berbeda</label><label class="option"><input type="radio" name="e2" value="b"> Dilihat dari arah yang berbeda</label><label class="option"><input type="radio" name="e2" value="c"> Jumlah kubusnya pasti berbeda</label><div class="feedback" id="ef2"></div>
+  </div>
+  <div class="quiz-question"><strong>3. Tampak kanan berarti bangun dilihat dari …</strong>
+   <label class="option"><input type="radio" name="e3" value="a"> Bawah</label><label class="option"><input type="radio" name="e3" value="b"> Atas</label><label class="option"><input type="radio" name="e3" value="c"> Sisi kanan</label><div class="feedback" id="ef3"></div>
+  </div>
+  <div class="quiz-question"><strong>4. Apa langkah yang tepat untuk merekonstruksi susunan kubus?</strong>
+   <label class="option"><input type="radio" name="e4" value="a"> Gunakan tampak depan saja tanpa mengamati lainnya</label><label class="option"><input type="radio" name="e4" value="b"> Gabungkan informasi tampak depan, kanan, dan atas</label><label class="option"><input type="radio" name="e4" value="c"> Abaikan jumlah kotak</label><div class="feedback" id="ef4"></div>
+  </div>
+  <div class="quiz-question"><strong>5. Tindakan yang menunjukkan sikap menghargai perspektif adalah …</strong>
+   <label class="option"><input type="radio" name="e5" value="a"> Mendengarkan pandangan teman</label><label class="option"><input type="radio" name="e5" value="b"> Menolak semua pendapat lain</label><label class="option"><input type="radio" name="e5" value="c"> Tidak mau berdiskusi</label><div class="feedback" id="ef5"></div>
+  </div>
+  <div class="actions"><button type="button" class="btn green" onclick="submitExam()">Nilai Evaluasi</button><button type="reset" class="btn secondary" onclick="clearExam()">Ulangi Evaluasi</button></div>
+  <div id="examResult" class="result" aria-live="polite"></div>
+ </form>
+</section>
+<section class="card" id="hasil" data-section>
+ <span class="tag">Rekap</span><h2>📊 Hasil Belajarku</h2>
+ <p>Masukkan nama agar hasil dapat ditampilkan di halaman ini. Nilai disimpan di perangkat/browser yang sedang digunakan.</p>
+ <label for="studentName"><strong>Nama siswa</strong></label><input id="studentName" type="text" placeholder="Tulis nama siswa" required>
+ <label for="studentClass"><strong>Kelas / rombel</strong></label><input id="studentClass" type="text" placeholder="Contoh: VI A">
+ <div class="grid2">
+  <div class="mini"><div class="note">Nilai latihan</div><div id="practiceScore" style="font-size:2rem;font-weight:900;color:#2563eb">—</div></div>
+  <div class="mini"><div class="note">Nilai evaluasi akhir</div><div id="examScore" style="font-size:2rem;font-weight:900;color:#0f766e">—</div></div>
+ </div>
+ <div class="actions"><button class="btn" onclick="saveLocal()">Simpan Hasil di Perangkat</button><button class="btn secondary" onclick="exportResult()">Unduh Rekap CSV</button></div>
+ <div id="saveFeedback" class="feedback" aria-live="polite"></div>
+ <details style="margin-top:20px"><summary><strong>Pengaturan Google Sheets (opsional)</strong></summary>
+  <p class="note">Agar nilai benar-benar masuk ke Google Sheets, ikuti panduan README.txt untuk membuat sheet dan memasang kode Apps Script. Setelah deployment, tempel URL Web App di bawah ini. Setelah URL terpasang, e-book akan mencoba mengirim nilai otomatis saat evaluasi dinilai; tombol manual tetap tersedia untuk mengirim ulang.</p>
+  <label for="sheetUrl"><strong>URL endpoint Google Apps Script</strong></label><input type="url" id="sheetUrl" placeholder="https://script.google.com/macros/s/.../exec">
+  <div class="actions"><button class="btn green" onclick="sendToSheet()">Kirim Hasil ke Google Sheets</button></div>
+  <div class="note" id="sheetFeedback" aria-live="polite"></div>
+ </details>
+ <div class="callout"><strong>Catatan guru:</strong> fitur kirim Google Sheets tidak aktif sampai URL Apps Script yang sesuai dipasang. Tanpa konfigurasi tersebut, gunakan tombol Unduh Rekap CSV.</div>
+</section>
+<section class="card">
+ <h2>🌟 Refleksi Diri</h2>
+ <p>Pilih pernyataan yang sesuai dengan pemahamanmu.</p>
+ <label class="option"><input type="checkbox"> Saya dapat menyusun dan mengurai bangun ruang.</label>
+ <label class="option"><input type="checkbox"> Saya dapat membedakan tampak depan, kanan, dan atas.</label>
+ <label class="option"><input type="checkbox"> Saya dapat menggunakan gambar dari beberapa arah untuk menebak susunan kubus.</label>
+ <p class="note">Sumber materi: Dicky Susanto, dkk., <em>Matematika untuk SD/MI Kelas VI</em>, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi, 2022, Bab 3 “Kubus dan Balok”, bagian yang tersedia pada PDF halaman buku 75–90. Materi “Lokasi” disebut pada peta konsep dan tujuan bab, tetapi uraian bagian tersebut tidak ada dalam file yang diunggah ini.</p>
+</section>
+</main></div>
+<footer>Belajar Matematika jadi petualangan! • E-Book kelas VI SD/MI</footer>
+<script>
+const sections=[...document.querySelectorAll('[data-section]')];let visited=new Set(JSON.parse(localStorage.getItem('cubeBookVisited')||'[]'));
+function updateProgress(){document.getElementById('progressBar').style.width=(visited.size/8*100)+'%';document.getElementById('progressText').textContent=visited.size+' dari 8 bagian';document.querySelectorAll('#menu a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+(location.hash||'#beranda').slice(1)))}
+function markVisited(id){visited.add(id);localStorage.setItem('cubeBookVisited',JSON.stringify([...visited]));updateProgress()}
+sections.forEach(s=>{const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)markVisited(e.target.id)}),{threshold:.25});obs.observe(s)});
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>setTimeout(updateProgress,100)));window.addEventListener('hashchange',updateProgress);updateProgress();
+let cubes=3;
+function drawCubes(){document.getElementById('cubeCount').textContent='Jumlah kubus: '+cubes;document.getElementById('cubeDisplay').innerHTML=Array.from({length:cubes},(_,i)=>`<span class="small-cube" style="background:${['#bfdbfe','#99f6e4','#fde68a','#fbcfe8','#c7d2fe'][i%5]}"></span>`).join('');document.getElementById('cubeHint').textContent=cubes===1?'Sekarang hanya ada satu kubus.':cubes===3?'Coba buat susunan dengan 3 kubus. Dapatkah kamu menggambarnya dari arah lain?':`Ada ${cubes} kubus. Cobalah bayangkan susunan mendatar atau bertingkat.`}
+function changeCubes(n){cubes=Math.max(1,Math.min(12,cubes+n));drawCubes()}function resetCubes(){cubes=3;drawCubes()}drawCubes();
+function quickAnswer(n){let f=document.getElementById('quickFeedback');f.textContent=n===3?'Benar! 4 − 1 = 3 kubus.':'Belum tepat. Coba hitung: 4 kubus dikurangi 1 kubus.';f.className='feedback '+(n===3?'correct':'incorrect')}
+const practiceAnswers={p1:'b',p2:'c',p3:'a',p4:'b'};let practiceScore=null,examScore=null;
+function checkPractice(){let score=0;for(let [q,a] of Object.entries(practiceAnswers)){let picked=document.querySelector(`input[name="${q}"]:checked`);let f=document.getElementById('pf'+q.slice(1));if(picked&&picked.value===a){score++;f.textContent='Benar!';f.className='feedback correct'}else{f.textContent='Belum tepat. Periksa kembali materi.';f.className='feedback incorrect'}}practiceScore=Math.round(score/4*100);document.getElementById('practiceResult').style.display='block';document.getElementById('practiceResult').innerHTML=`Nilai latihan: <strong>${practiceScore}/100</strong> (${score} dari 4 jawaban benar).`;document.getElementById('practiceScore').textContent=practiceScore;localStorage.setItem('cubePracticeScore',practiceScore)}
+function clearPractice(){setTimeout(()=>{document.querySelectorAll('[id^="pf"]').forEach(e=>e.textContent='');document.getElementById('practiceResult').style.display='none'},0)}
+const examAnswers={e1:'a',e2:'b',e3:'c',e4:'b',e5:'a'};
+function submitExam(){let score=0;for(let [q,a] of Object.entries(examAnswers)){let picked=document.querySelector(`input[name="${q}"]:checked`);let f=document.getElementById('ef'+q.slice(1));if(picked&&picked.value===a){score++;f.textContent='Benar!';f.className='feedback correct'}else{f.textContent='Belum tepat. Baca kembali materi terkait.';f.className='feedback incorrect'}}examScore=score*20;document.getElementById('examResult').style.display='block';document.getElementById('examResult').innerHTML=`Nilai akhir: <strong>${examScore}/100</strong> (${score} dari 5 jawaban benar). `+(examScore>=80?'Hebat! Pemahamanmu sangat baik.':examScore>=60?'Bagus, terus berlatih agar makin paham.':'Jangan menyerah. Pelajari kembali materi lalu coba lagi.');document.getElementById('examScore').textContent=examScore;localStorage.setItem('cubeExamScore',examScore);autoSendScore()}
+function clearExam(){setTimeout(()=>{document.querySelectorAll('[id^="ef"]').forEach(e=>e.textContent='');document.getElementById('examResult').style.display='none'},0)}
+function saveLocal(){let data=getData();localStorage.setItem('cubeBookResult',JSON.stringify(data));document.getElementById('saveFeedback').textContent='Hasil disimpan pada browser/perangkat ini.'}
+function getData(){return {tanggal:new Date().toLocaleString('id-ID'),nama:document.getElementById('studentName').value.trim()||'Belum diisi',kelas:document.getElementById('studentClass').value.trim()||'-',nilai_latihan:practiceScore??localStorage.getItem('cubePracticeScore')??'',nilai_evaluasi:examScore??localStorage.getItem('cubeExamScore')??''}}
+async function autoSendScore(){const name=document.getElementById('studentName').value.trim();const url=document.getElementById('sheetUrl').value.trim();const feedback=document.getElementById('sheetFeedback');if(!name){feedback.textContent='Nilai sudah dihitung, tetapi belum dikirim. Isi nama siswa dan URL Google Sheets pada bagian Hasil Belajarku, lalu tekan Kirim Hasil.';return}if(!url){feedback.textContent='Nilai sudah dihitung. Untuk mengirim otomatis, guru perlu memasukkan URL Apps Script pada Pengaturan Google Sheets.';return}try{await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(getData())});feedback.textContent='Permintaan pengiriman nilai telah dikirim. Karena pembatasan browser, periksa Google Sheets untuk memastikan baris baru masuk.'}catch(e){feedback.textContent='Pengiriman otomatis gagal. Periksa koneksi dan URL Apps Script, lalu coba tombol Kirim Hasil ke Google Sheets.'}}
+function exportResult(){let d=getData();let rows=[['Tanggal','Nama','Kelas','Nilai Latihan','Nilai Evaluasi'],[d.tanggal,d.nama,d.kelas,d.nilai_latihan,d.nilai_evaluasi]];let csv=rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');let blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='rekap-nilai-kubus-balok.csv';a.click();URL.revokeObjectURL(a.href)}
+async function sendToSheet(){let url=document.getElementById('sheetUrl').value.trim(),feedback=document.getElementById('sheetFeedback');if(!url){feedback.textContent='Masukkan URL Apps Script yang telah disiapkan guru.';return}if(!url.startsWith('https://script.google.com/')){feedback.textContent='URL harus berasal dari https://script.google.com/';return}feedback.textContent='Mengirim data…';try{await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(getData())});feedback.textContent='Permintaan pengiriman telah dilakukan. Karena pembatasan browser (no-cors), halaman tidak dapat memastikan data benar-benar masuk. Periksa Google Sheets.'}catch(e){feedback.textContent='Pengiriman gagal. Periksa URL, deployment Apps Script, dan koneksi internet.'}}
+</script>
+</body></html>
